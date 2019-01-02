@@ -1,5 +1,5 @@
-#Java tech test
-##Introduction
+# Java tech test #
+## Introduction
 Your task, is to build a REST API for the application provided in this project.
 In order to open the web application simply open the ./public/index.html file in your preferred browser of choice.
 
@@ -11,11 +11,11 @@ should return in order for the front end to work correctly.
 There is deliberately no validation or special character handling on the front end.
 This is not indicative of how we normally write our code.
 
-####POST http://localhost:8080/api/item
+#### POST http://localhost:8080/api/item
 This endpoint gets called when adding a new item by clicking on the plus icon. Each item must have a unique id, 
 how you decide this value is up to you (sequential, uuid, randomly generated etc.).
 
-#####Request
+##### Request
 ```
 POST http://localhost:8080/api/item
 
@@ -27,13 +27,13 @@ POST http://localhost:8080/api/item
 }
 ```
 
-#####Responses
-######Success
+##### Responses
+###### Success
 ```
 HTTP/1.1 200 OK
 ```
 
-######Failure
+###### Failure
 Feel free to customize the messages in the array
 ```
 HTTP/1.1 4**
@@ -43,17 +43,17 @@ HTTP/1.1 4**
 }
 ```
 
-####GET http://localhost:8080/api/item
+#### GET http://localhost:8080/api/item
 This should retrieve a list of all items. This is called on page load and when any modal is closed/submitted
 
 The stockWarning boolean should be set to true when the quantity is less than or equal to the warningStockLevel.
 
-#####Request
+##### Request
 ```
 GET http://localhost:8080/api/item
 ```
-#####Responses
-######Success
+##### Responses
+###### Success
 ```
 HTTP/1.1 200 OK
 
@@ -85,7 +85,7 @@ HTTP/1.1 200 OK
 ]
 ```
 
-######Failure
+###### Failure
 Feel free to customize the messages in the array
 ```
 HTTP/1.1 4**
@@ -95,10 +95,10 @@ HTTP/1.1 4**
 }
 ```
 
-####PATCH http://localhost:8080/api/item/{id}
+#### PATCH http://localhost:8080/api/item/{id}
 This endpoint is called when an item is edited. The id in the url refers to the item's id.
 
-#####Request
+##### Request
 ```
 PATCH http://localhost:8080/api/item/2
 
@@ -110,13 +110,13 @@ PATCH http://localhost:8080/api/item/2
 }
 ```
 
-#####Responses
-######Success
+##### Responses
+###### Success
 ```
 HTTP/1.1 200 OK
 ```
 
-######Failure
+###### Failure
 Feel free to customize the messages in the array
 ```
 HTTP/1.1 4**
@@ -126,10 +126,10 @@ HTTP/1.1 4**
 }
 ```
 
-####POST http://localhost:8080/api/stock/reduce
+#### POST http://localhost:8080/api/stock/reduce
 This request is made when the "SELL ITEMS" button is clicked.
 
-#####Request
+##### Request
 ```
 POST http://localhost:8080/api/stock/reduce
 
@@ -145,13 +145,13 @@ POST http://localhost:8080/api/stock/reduce
 ]
 ```
 
-#####Responses
-######Success
+##### Responses
+###### Success
 ```
 HTTP/1.1 200 OK
 ```
 
-######Failure
+###### Failure
 Feel free to customize the messages in the array
 ```
 HTTP/1.1 4**
@@ -161,7 +161,7 @@ HTTP/1.1 4**
 }
 ```
 
-####POST http://localhost:8080/api/stock/order
+#### POST http://localhost:8080/api/stock/order
 This endpoint is called when clicking on the Generate order icon.
 It represents preparing an order to place with your suppliers.
 
@@ -170,13 +170,13 @@ to boost them up to the target level. This list should be stored against a uniqu
 this value is up to you (sequential, uuid, randomly generated etc.).
 
 
-#####Request
+##### Request
 ```
 POST http://localhost:8080/api/stock/order
 ```
 
-#####Responses
-######Success
+##### Responses
+###### Success
 ```
 HTTP/1.1 200 OK
 [
@@ -193,7 +193,7 @@ HTTP/1.1 200 OK
 ]
 ```
 
-######Failure
+###### Failure
 Feel free to customize the messages in the array
 ```
 HTTP/1.1 4**
@@ -203,18 +203,18 @@ HTTP/1.1 4**
 }
 ```
 
-####GET http://localhost:8080/api/stock/order
+#### GET http://localhost:8080/api/stock/order
 This endpoint is called when clicking on the receive order icon.
 
 A list of unfulfilled order references that were previously generated should be returned from this endpoint. 
 
-#####Request
+##### Request
 ```
 GET http://localhost:8080/api/stock/order
 ```
 
-#####Responses
-######Success
+##### Responses
+###### Success
 ```
 HTTP/1.1 200 OK
 [
@@ -223,7 +223,7 @@ HTTP/1.1 200 OK
 ]
 ```
 
-######Failure
+###### Failure
 Feel free to customize the messages in the array
 ```
 HTTP/1.1 4**
@@ -233,23 +233,23 @@ HTTP/1.1 4**
 }
 ```
 
-####POST http://localhost:8080/api/stock/order/{orderRef}
+#### POST http://localhost:8080/api/stock/order/{orderRef}
 The order ref is the selected reference on the receive order modal.
 This represents restocking your warehouse with fresh supplies.
 The endpoint is called by clicking on the FULFIL ORDER button.
 
-#####Request
+##### Request
 ```
 POST http://localhost:8080/api/stock/order/940283453
 ```
 
-#####Responses
-######Success
+##### Responses
+###### Success
 ```
 HTTP/1.1 200 OK
 ```
 
-######Failure
+###### Failure
 Feel free to customize the messages in the array
 ```
 HTTP/1.1 4**
